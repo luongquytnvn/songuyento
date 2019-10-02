@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let a = false;
+    let N;
+    let numbers = '';
+    for (N = 2; count < 20; N++) {
+        for (i = 2, b = true; i < N; i++) {
+            a = ((parseInt(N) % parseInt(i)) != 0);
+            b = b + '&&' + a;
+        }
+        if (eval(b)) {
+            numbers = numbers + ' ' + N;
+            count++;
+        }
+    }
+    document.write(numbers)
+</script>
+</body>
+</html>
