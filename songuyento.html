@@ -11,16 +11,19 @@
     let N;
     let numbers = '';
     for (N = 2; count < 20; N++) {
-        for (i = 2, b = true; i < N; i++) {
-            a = ((parseInt(N) % parseInt(i)) != 0);
-            b = b + '&&' + a;
+        let b= true;
+        for (i = 2; i < N; i++) {
+            if((parseInt(N) % parseInt(i)) == 0){
+            b = false;
+            break;
+            }
         }
-        if (eval(b)) {
-            numbers = numbers + ' ' + N;
+        if (b) {
+            numbers = numbers + '  ' + N;
             count++;
         }
     }
-    document.write(numbers)
+    document.write('Danh sách 20 số nguyên tố đầu tiên: ' + numbers)
 </script>
 </body>
 </html>
